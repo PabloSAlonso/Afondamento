@@ -29,7 +29,7 @@ print("Frutas en el set:")
 for fruta in frutas:
     print(f" - {fruta}")
 # De lista a set (elimina duplicados)
-lista_con_duplicados = ["manzana", "naranja", "manzana", "uva", "naranja", "uva"]
+lista_con_duplicados = ["manzana", "naranja", "manzana", "uva", "naranja", "uva"] 
 set_sin_duplicados = set(lista_con_duplicados)
 print(f"Lista con duplicados: {lista_con_duplicados}")
 print(f"Set sin duplicados: {set_sin_duplicados}")
