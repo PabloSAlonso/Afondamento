@@ -42,4 +42,4 @@ print(dato, type(dato)) # El print separando con coma asi va concatenando la cad
 
 # Regla de estilo: nombre de los archivos todo minus con _ las palabras separadas ok
 
-# cuando empiece la de las 12:20 vamos a seguir, yo te subo otra vez el enlace y si quieres entra sino no 
+# cuando empiece la de las 12:20 vamos a seguir, yo te subo otra vez el enlace y si quieres entra sino no vale
