@@ -1,0 +1,1 @@
+hay q hacer esta mierda antes del 30
