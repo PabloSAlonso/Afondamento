@@ -28,3 +28,5 @@ print(f"numeros[1::2] -> {numeros[1::2]}") # Cada 2 elementos empezando en 1
 print(f"numeros[2:15:3] -> {numeros[2:15:3]}") # Cada 3 elementos del 2 al 14
 print(f"numeros[::-1] -> {numeros[::-1]}") # Lista invertida
 print()
+# ¿Italiani? no sabe hacer algo jajajaj
+# vamos a instalar librerias en consola dale ah siisii
