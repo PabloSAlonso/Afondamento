@@ -64,7 +64,7 @@ print(f"Raiz de {a}: {math.sqrt(a):.3f}")
 
 # ---------------------------------------------------------------------------
 
-# Excepciones
+# Excepciones (poco q comentar, lo dejo aqui y ya)
 import math as m # Util si el nombre del módulo es largo
 try:
     numero = int(input("Ingresa un número positivo: "))
