@@ -100,7 +100,7 @@ git reset HEAD *.class
 ```
 **Repositorios remotos: Github**
 ```bash
-git clone proyecto
+git clone direccion
 
 git push -u origin main 
 
