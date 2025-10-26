@@ -1,16 +1,6 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
+def contar_palabras(texto):
+    for i in range(len(texto)):
+        
 
 
 

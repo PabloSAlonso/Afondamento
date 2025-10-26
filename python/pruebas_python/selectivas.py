@@ -45,4 +45,4 @@ for i in range(10): # range(n) devuelve un tipo range: secuencia de números inm
 for i in range (5,30,2):
     print(i)
 
-# Al ser solo foreach se usa mas que nada para recorrer y mostrar pero no mutar/modificar followww
+# Al ser solo foreach se usa mas que nada para recorrer y mostrar pero no mutar/modificar
