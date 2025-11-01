@@ -130,6 +130,16 @@ index d92e49a..ea169a0 100644
  dos
 -tres
 $ git commit -a -m "Probando diff"
+git diff
+diff --git a/GIT/practica_github/texto.txt b/GIT/practica_github/texto.txt
+index ea169a0..6acce31 100644
+--- a/GIT/practica_github/texto.txt
++++ b/GIT/practica_github/texto.txt
+@@ -2,4 +2,5 @@ dos
+ cuatro
+ cinco
+ seis
+ +siete
 ```
 <!-- Ejecutamos el commit asi para no hacer add porque en este cambio de version no hemos añadido archivos -->
 
@@ -138,6 +148,51 @@ $ git commit -a -m "Probando diff"
 
 ```bash
 nano .gitignore *.class Ahora git ignora los archivos terminados por .class
+
+git status
+
+On branch master
+Your branch is ahead of 'origin/main' by 4 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   documentacion.md
+        modified:   texto.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        Hola.java
+        importante~
+        temporal~
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Probamos a quitar gitignore
+git status
+On branch master
+Your branch is ahead of 'origin/main' by 4 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   documentacion.md
+        modified:   texto.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        Hola.class
+        Hola.java
+        importante~
+        temporal~
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
 ```
 **Para comprobarlo, al añadirle archivos al directorio se ejecuta:**
 
