@@ -120,14 +120,15 @@ Date:   Sat Nov 1 19:45:44 2025 +0100
 **Comando para mostrar diferencias entre una version y la anterior y probandolo:**  
 ```bash
 git diff -> (Por ejemplo los cambios en texto.txt:)
-uno
+warning: in the working copy of 'GIT/practica_github/texto.txt', LF will be replaced by CRLF the next time Git touches it
+diff --git a/GIT/practica_github/texto.txt b/GIT/practica_github/texto.txt
+index d92e49a..ea169a0 100644
+--- a/GIT/practica_github/texto.txt
++++ b/GIT/practica_github/texto.txt
+@@ -1,5 +1,5 @@
+ uno
  dos
- tres
--cuatro
-\ No newline at end of file
-+cuatro
-+cinco
-\ No newline at end of file
+-tres
 $ git commit -a -m "Probando diff"
 ```
 <!-- Ejecutamos el commit asi para no hacer add porque en este cambio de version no hemos añadido archivos -->
