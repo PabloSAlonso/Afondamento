@@ -229,20 +229,20 @@ git merge Prueba
 ```
 **Eliminar y quitar de seguimiento**
 ```bash
-git rm 
+git rm importante~
+# Eliminar archivos
 
 git reset HEAD *.class
+# Quita de seguimiento los .class
 
 ```
 **Repositorios remotos: Github**
 ```bash
-git clone direccion
+ git clone https://github.com/ColegioVivasCurro/MiPrueba
 
 git push -u origin main 
-
-git push 
 ```
-<!-- Cuando haces un pull o push del origin main es exclusivamente cuando la primera vez que ejecutas ese comando en remoto, despues del primero procederás a ejecutarlo normal hasta que vuelvas a cambiar tu zona de trabajo -->
+<!-- Cuando haces un push con -u es para qeu reconozca sus nombres al ejecutar posteriormente cualquier push normal -->
 
 
 
