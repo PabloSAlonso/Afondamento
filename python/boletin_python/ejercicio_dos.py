@@ -1,5 +1,57 @@
+import string
+
 def contar_palabras(texto):
-    for i in range(len(texto)):
+    texto_formateado = texto.lower()
+    for signo in string.punctuation:
+        texto_formateado = texto_formateado.replace(signo, "")
+    palabras = texto_formateado.split()
+    frecuencia_cada_palabra = {}
+    for palabra in palabras:
+        if(palabra in frecuencia_cada_palabra):
+            frecuencia_cada_palabra[palabra]+=1
+        else:
+            frecuencia_cada_palabra[palabra]=1
+    return frecuencia_cada_palabra
+
+def estadidisticasDeTexto(texto):
+    diccionario = contar_palabras(texto)
+    numero_palabras = sum(diccionario.values())
+    longitud_total = 0
+    for clave, valor in diccionario.items():
+        longitud_total += len(clave)*valor
+    longitud_media = longitud_total / numero_palabras
+    palabras_mas_larga = list(diccionario.keys())[0]
+    frecuencia= list(diccionario.values())[0]
+    palabra_mas_frecuente= list(diccionario.keys())[0]
+    
+    for clave, valor in diccionario.items():
+        if len(clave) > len(palabras_mas_larga):
+            palabras_mas_larga = clave
+        if valor > frecuencia:
+            frecuencia = valor
+            palabra_mas_frecuente = clave
+    
+    return (longitud_total, longitud_media, palabras_mas_larga, palabra_mas_frecuente)
+
+def leerDoc():
+    try:
+        archivo = input("Introduce el nombre del archivo\n")
+        with open(archivo, "r") as contenido_a_leer:
+            return contenido_a_leer.read()
+    except IOError:
+        print ("Fallo de archivo")
+
+
+archivo = leerDoc()
+diccionario = contar_palabras(archivo)
+print ("Apartado A(Diccionario)", end="\n")
+for clave, valor in sorted(diccionario.items()):
+    print (f"{clave} : {valor}")
+
+print("Apartado B(Estadísticas)", end="\n")
+totalPalabras, longMediaPalabras, palabraLarga, palabraMasFrecuente = estadidisticasDeTexto(archivo)
+print(f"Total palabras: {totalPalabras} \nLongitud media de las palabras: {longMediaPalabras:.2f} \nPalabra más larga: {palabraLarga} \nPalabra más frecuente: {palabraMasFrecuente}")
+
         
 
 
