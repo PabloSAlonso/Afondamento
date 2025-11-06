@@ -23,6 +23,7 @@ def pide_libro():
         isbn = input("Isbn del libro? - ")
         while (not comprueba_isbn(isbn)):
             isbn = input("Introduce uno válido (longitud 10 con final en X o Dígito) - ")
+        print("Dame el numero de paginas")
         numero_paginas = pide_entero_positivo()
     except ValueError:
         print("Introduce valores válidos")
@@ -51,6 +52,13 @@ def pide_libro():
 
 libros = []
 
+try:
+    with open("datos_guardados","r") as archivo_libros:
+        for
+except IOError:
+    print("Problemas con el archivo")
+
+opcion = 0;
 while opcion != 4:
     print("=== MENU DE OPCIONES ===\n")
     print("1.- Añadir libro: ", end="\n")
@@ -65,11 +73,14 @@ while opcion != 4:
         for libro in libros:
             print(f"{libro[0]:<20} {libro[1]:<20} {libro[2]:<20} {libro[3]:<20}")
     elif(opcion == 3):
-        
+        titulo_eliminar = input("Que libro quieres eliminar (titulo)")
+        for libro in libros:
+            if libro[0] == titulo_eliminar:
+                libros.remove(libro)
     elif(opcion == 4):
-
+        print("Saliendo del programa...")
     else:
-        print("Introduce una opcion válida")
+        print("Introduce una opcion del menu\n")
 
 
 
