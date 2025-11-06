@@ -85,8 +85,9 @@ while opcion != 4:
         print ("Guardando datos...")
         with open("GuardaDatos.txt","w") as archivo_guarda_datos:
             for libro in libros:
-                linea = libro[0] + "," + libro[1] + "," + libro[2]+","+str(libro[3])
-                archivo_libros.write(f"{linea}\n")
+                for elemento in libro:
+                    archivo_guarda_datos.write(f"{libro[elemento]}, ")
+                archivo_guarda_datos("\n")
         print("Datos guardados")
         print("Saliendo del programa...")
     else:
