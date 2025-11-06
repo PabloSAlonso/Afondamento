@@ -54,7 +54,11 @@ libros = []
 
 try:
     with open("datos_guardados","r") as archivo_libros:
-        for
+        for linea in archivo_libros:
+            linea = linea.strip()
+            datos = linea.split(",")
+            if (len(datos) == 4):
+                libros.append((datos[0],datos[1],datos[2],int(datos[3])))
 except IOError:
     print("Problemas con el archivo")
 
@@ -78,6 +82,12 @@ while opcion != 4:
             if libro[0] == titulo_eliminar:
                 libros.remove(libro)
     elif(opcion == 4):
+        print ("Guardando datos...")
+        with open("GuardaDatos.txt","w") as archivo_guarda_datos:
+            for libro in libros:
+                linea = libro[0] + "," + libro[1] + "," + libro[2]+","+str(libro[3])
+                archivo_libros.write(f"{linea}\n")
+        print("Datos guardados")
         print("Saliendo del programa...")
     else:
         print("Introduce una opcion del menu\n")
