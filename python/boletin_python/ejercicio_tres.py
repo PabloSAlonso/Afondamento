@@ -53,8 +53,8 @@ def pide_libro():
 libros = []
 
 try:
-    with open("datos_guardados","r") as archivo_libros:
-        for linea in archivo_libros:
+    with open("GuardaDatos.txt","r") as archivo_cargar_datos:
+        for linea in archivo_cargar_datos:
             linea = linea.strip()
             datos = linea.split(",")
             if (len(datos) == 4):
@@ -83,11 +83,9 @@ while opcion != 4:
                 libros.remove(libro)
     elif(opcion == 4):
         print ("Guardando datos...")
-        with open("GuardaDatos.txt","w") as archivo_guarda_datos:
+        with open("GuardaDatos.txt","w",True) as archivo_guarda_datos:
             for libro in libros:
-                for elemento in libro:
-                    archivo_guarda_datos.write(f"{libro[elemento]}, ")
-                archivo_guarda_datos("\n")
+                archivo_guarda_datos.write(f"{libro[0]}, {libro[1]}, {libro[2]}, {str(libro[3])}\n")
         print("Datos guardados")
         print("Saliendo del programa...")
     else:
