@@ -57,15 +57,20 @@ while opcion != 4:
     print("2.- Mostrar lista: ", end="\n")
     print("3.- Eliminar libros: ", end="\n")
     print("4.- Salir: ", end="\n")
-
     opcion = pide_entero_positivo()
     if (opcion == 1):
         libros.append(pide_libro())
     elif(opcion == 2):
         print(f"{'Título':<20} {'Autor':<20} {'ISBN':<15} {'Páginas':<7}")
         for libro in libros:
-            titulo,autor,isbn,num_pag = libro
-            print(f"{titulo:<20} {autor:<20} {isbn:<20} {num_pag:<20}")
+            print(f"{libro[0]:<20} {libro[1]:<20} {libro[2]:<20} {libro[3]:<20}")
+    elif(opcion == 3):
+        
+    elif(opcion == 4):
+
+    else:
+        print("Introduce una opcion válida")
+
 
 
 
