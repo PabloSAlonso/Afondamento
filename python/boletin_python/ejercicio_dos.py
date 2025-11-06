@@ -13,7 +13,7 @@ def contar_palabras(texto):
             frecuencia_cada_palabra[palabra]=1
     return frecuencia_cada_palabra
 
-def estadidisticasDeTexto(texto):
+def estadisticas_de_texto(texto):
     diccionario = contar_palabras(texto)
     numero_palabras = sum(diccionario.values())
     longitud_total = 0
@@ -31,9 +31,9 @@ def estadidisticasDeTexto(texto):
             frecuencia = valor
             palabra_mas_frecuente = clave
     
-    return (longitud_total, longitud_media, palabras_mas_larga, palabra_mas_frecuente)
+    return (numero_palabras, longitud_media, palabras_mas_larga, palabra_mas_frecuente)
 
-def leerDoc():
+def leer_doc():
     try:
         archivo = input("Introduce el nombre del archivo\n")
         with open(archivo, "r") as contenido_a_leer:
@@ -42,15 +42,15 @@ def leerDoc():
         print ("Fallo de archivo")
 
 
-archivo = leerDoc()
+archivo = leer_doc()
 diccionario = contar_palabras(archivo)
 print ("Apartado A(Diccionario)", end="\n")
 for clave, valor in sorted(diccionario.items()):
     print (f"{clave} : {valor}")
 
 print("Apartado B(Estadísticas)", end="\n")
-totalPalabras, longMediaPalabras, palabraLarga, palabraMasFrecuente = estadidisticasDeTexto(archivo)
-print(f"Total palabras: {totalPalabras} \nLongitud media de las palabras: {longMediaPalabras:.2f} \nPalabra más larga: {palabraLarga} \nPalabra más frecuente: {palabraMasFrecuente}")
+total_palabras, longitud_media, palabra_mas_larga, palabra_mas_frecuente = estadisticas_de_texto(archivo)
+print(f"Total palabras: {total_palabras} \nLongitud media de las palabras: {longitud_media:.2f} \nPalabra más larga: {palabra_mas_larga} \nPalabra más frecuente: {palabra_mas_frecuente}")
 
         
 
