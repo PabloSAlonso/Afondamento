@@ -17,12 +17,15 @@ def comprueba_isbn(isbn):
     return False
 
 def pide_libro():
-    titulo = input("Dime el titulo de tu libro - ")
-    autor = input("Dime el nombre de su autor - ")
-    isbn = input("Isbn del libro? - ")
-    while (not comprueba_isbn(isbn)):
-        isbn = input("Introduce uno válido (longitud 10 con final en X o Dígito) - ")
-    numero_paginas = pide_entero_positivo()
+    try:
+        titulo = input("Dime el titulo de tu libro - ")
+        autor = input("Dime el nombre de su autor - ")
+        isbn = input("Isbn del libro? - ")
+        while (not comprueba_isbn(isbn)):
+            isbn = input("Introduce uno válido (longitud 10 con final en X o Dígito) - ")
+        numero_paginas = pide_entero_positivo()
+    except ValueError:
+        print("Introduce valores válidos")
     return titulo, autor, isbn, numero_paginas
 
 #Comprobaciones
