@@ -57,8 +57,10 @@ def main():
             running = False
     aciertos = [0, 0, 0, 0, 0, 0, 0]
     for i in range(1, 1000001):
+        #Rellena todo en el primero
         cadaLoteria = []
         rellenaCol(cadaLoteria)
         aciertos[compara(cadaLoteria,lista)] += 1
     print(aciertos)
+
 main()
