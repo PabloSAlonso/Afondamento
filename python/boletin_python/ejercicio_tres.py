@@ -2,7 +2,7 @@ def pide_entero_positivo():
     try:
         numero = int (input("Escribe un numero entero positivo - "))
         while(numero < 0):
-            numero = int (input("Escribe un numero entero positivo - "))
+            numero = int (input("Ojo, has metido un neg. Debes un numero entero positivo - "))
     except ValueError :
         print ("Escribe un numero - ")
     return numero
@@ -11,7 +11,7 @@ def pide_entero_positivo():
 def comprueba_isbn(isbn):
     isbn = isbn.strip().replace(" ","").replace("-","")
     if len(isbn) != 10 or not isbn[0:9].isdigit():
-            return False
+        return False
     if (isbn[-1] or isbn.endswith("X")):
         return True
     return False
