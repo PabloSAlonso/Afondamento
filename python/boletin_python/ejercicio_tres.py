@@ -77,10 +77,10 @@ while opcion != 4:
         for libro in libros:
             print(f"{libro[0]:<20} {libro[1]:<20} {libro[2]:<20} {libro[3]:<20}")
     elif(opcion == 3):
-        titulo_eliminar = input("Que libro quieres eliminar (titulo)")
-        for libro in libros:
-            if libro[0] == titulo_eliminar:
-                libros.remove(libro)
+        titulo_eliminar = input("Que libro quieres eliminar (titulo):")
+        for i in range(len(libros) - 1, -1, -1):
+            if libros[i][0] == titulo_eliminar:
+                libros.remove(libros[i])
     elif(opcion == 4):
         print ("Guardando datos...")
         with open("GuardaDatos.txt","w",True) as archivo_guarda_datos:
