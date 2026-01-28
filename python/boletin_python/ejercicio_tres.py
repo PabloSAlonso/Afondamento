@@ -77,10 +77,14 @@ while opcion != 4:
         for libro in libros:
             print(f"{libro[0]:<20} {libro[1]:<20} {libro[2]:<20} {libro[3]:<20}")
     elif(opcion == 3):
-        titulo_eliminar = input("Que libro quieres eliminar (titulo)")
-        for libro in libros:
-            if libro[0] == titulo_eliminar:
-                libros.remove(libro)
+        titulo_eliminar = input("Que libro quieres eliminar (titulo):")
+
+        for i in range(len(libros) - 1, -1, -1):#len(libros) -> donde empieza el bucle for(incluido, por eso se le resta 1)
+            # segundo parametro que es -1, es donde acaba el bucle y no esta incluido (si pusieramos 0 no llegaria a leer la primer posicion de la coleccion)
+            # i se ira incrementando o decrementando en la cantidad que se le pasa al 3º parametro de range, en este caso vamos restando 1
+            if libros[i][0] == titulo_eliminar:
+                libros.remove(libros[i])
+    
     elif(opcion == 4):
         print ("Guardando datos...")
         with open("GuardaDatos.txt","w",True) as archivo_guarda_datos:
